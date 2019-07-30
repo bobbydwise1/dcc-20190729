@@ -35,6 +35,23 @@ The name of a file contains at least a period and an extension.
 The name of a directory or sub-directory will not contain a period.
 */
 
+/*
+
+from the string construction, we see that:
+
+\n = "carraige return" = new sub tree starts
+\t = "tab" = "new document/folder"
+"." = extension = all files have extensions.  Folders do not.
+
+we note that there is no "collapsed" tree - the entire folder and file structure is displayed at once.
+
+*/
+
+const
+
+let test1 = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
+let test2 = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
+
 $(document).ready(function() {
   $('#output-section-1').text(1);
   $('#output-section-2').text(2);
