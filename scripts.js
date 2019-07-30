@@ -48,10 +48,15 @@ we note that there is no "collapsed" tree - the entire folder and file structure
 */
 
 const findLongString = (yourString) => {
-  let found = yourString.indexOf('.');
-  if (found == -1) {return 0}
-  let firstpart = yourString.slice(0,found)
-  return firstpart;
+  let fileFound = yourString.indexOf('.');
+  if (fileFound == -1) {return 0}
+  let firstpart = yourString.slice(0,fileFound);
+  /*For the next part, you need to do the following:
+  1. determine how deep the file is in the file tree
+  2. do this in a loop
+  */
+  let regexp = new RegExp('\\n\\n')
+  return firstpart.match(regexp);
 }
 
 let test1 = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
