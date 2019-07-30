@@ -47,10 +47,18 @@ we note that there is no "collapsed" tree - the entire folder and file structure
 
 */
 
-const
+const findLongString = (yourString) => {
+  let found = yourString.indexOf('.');
+  if (found == -1) {return 0}
+  let firstpart = yourString.slice(0,found)
+  return firstpart;
+}
 
 let test1 = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
 let test2 = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
+
+console.log(test1)
+console.log(findLongString(test1))
 
 $(document).ready(function() {
   $('#output-section-1').text(1);
